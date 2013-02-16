@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.5, 11.25" name="BeerReview">
+  <DataContextMoniker Name="/BeerReviewDataContext" />
+  <nestedChildShapes>
+    <classShape Id="24f0040b-4b89-4417-aa52-f612c4cd8818" absoluteBounds="6.25, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/BeerReviewDataContext/Beer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d2ea82e-1974-4afe-a988-f4f3e6f34528" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a29ec30-6e6b-4cb7-be30-7c489b3a9e9f" absoluteBounds="3.5, 5.5, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/BeerReviewDataContext/Style" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be2e9f7c-aa1f-4f7a-9e20-e4ac1297b897" absoluteBounds="3.515, 5.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81d652bf-5589-4054-a212-e95cb0bf0d69" absoluteBounds="3.5, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/BeerReviewDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d58d2bff-b7a1-4d0f-a308-c7ca8a7fa6e1" absoluteBounds="3.515, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbd53357-b40f-4d3d-b9d4-8b0f199df0f7" absoluteBounds="0.5, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/BeerReviewDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4260ae3-a4b4-424c-b164-1e275b34a635" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ab571cc-10a9-404e-9230-10f29949ea7e" absoluteBounds="9, 1.25, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/BeerReviewDataContext/Review" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f3a0a4a-64ec-4bc2-9857-5d35a07dfc81" absoluteBounds="9.015, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.03125); (6.96875 : 6.03125); (6.96875 : 3.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BeerReviewDataContext/Style/Style_Beer" />
+      <nodes>
+        <classShapeMoniker Id="6a29ec30-6e6b-4cb7-be30-7c489b3a9e9f" />
+        <classShapeMoniker Id="24f0040b-4b89-4417-aa52-f612c4cd8818" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.06814697265625); (6.25 : 2.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeerReviewDataContext/Company/Company_Beer" />
+      <nodes>
+        <classShapeMoniker Id="81d652bf-5589-4054-a212-e95cb0bf0d69" />
+        <classShapeMoniker Id="24f0040b-4b89-4417-aa52-f612c4cd8818" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 1.53449625651042); (3.5 : 1.53449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BeerReviewDataContext/Country/Country_Company" />
+      <nodes>
+        <classShapeMoniker Id="bbd53357-b40f-4d3d-b9d4-8b0f199df0f7" />
+        <classShapeMoniker Id="81d652bf-5589-4054-a212-e95cb0bf0d69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.13544840494792); (9 : 2.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeerReviewDataContext/Beer/Beer_Review" />
+      <nodes>
+        <classShapeMoniker Id="24f0040b-4b89-4417-aa52-f612c4cd8818" />
+        <classShapeMoniker Id="8ab571cc-10a9-404e-9230-10f29949ea7e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e0c06f59-1f32-4c07-9fe8-9ce5b735ed84" absoluteBounds="13.875, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BeerReviewDataContext/Article" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2bb96eb-4a04-4898-b96d-57f4f818c592" absoluteBounds="13.89, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c1d2b56-5980-4da6-a747-8b925913c43a" absoluteBounds="14.25, 4.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BeerReviewDataContext/ArticleComment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac585372-a6b4-4336-8a44-541b140bfa25" absoluteBounds="14.265, 4.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.0625 : 2.82859537760417); (15.0625 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeerReviewDataContext/Article/Article_ArticleComment" />
+      <nodes>
+        <classShapeMoniker Id="e0c06f59-1f32-4c07-9fe8-9ce5b735ed84" />
+        <classShapeMoniker Id="7c1d2b56-5980-4da6-a747-8b925913c43a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3194f591-3f08-46bb-9627-493418ca2a00" absoluteBounds="1.75, 7.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/BeerReviewDataContext/Recipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b678d9a-1fd5-44db-bd7f-08f52c6eab10" absoluteBounds="1.7650000000000001, 8.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.6250005 : 6.69399251302083); (4.6250005 : 9.40465413411458); (3.75 : 9.40465413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BeerReviewDataContext/Style/Style_Recipe" />
+      <nodes>
+        <classShapeMoniker Id="6a29ec30-6e6b-4cb7-be30-7c489b3a9e9f" />
+        <classShapeMoniker Id="3194f591-3f08-46bb-9627-493418ca2a00" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="22b440a6-d7b4-495e-b978-9669434dd5b9" absoluteBounds="7.75, 6.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/BeerReviewDataContext/RSVP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d28b42df-0f9c-4c4e-8ee0-dacaa873540b" absoluteBounds="7.7650000000000006, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47401223-d0fa-48db-ae9f-2018a070d647" absoluteBounds="11, 6.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/BeerReviewDataContext/BeerEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13af81d6-11fe-43aa-a704-f9fa859c62ab" absoluteBounds="11.015, 6.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 7.31814697265625); (9.75 : 7.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BeerReviewDataContext/BeerEvent/BeerEvent_RSVP" />
+      <nodes>
+        <classShapeMoniker Id="47401223-d0fa-48db-ae9f-2018a070d647" />
+        <classShapeMoniker Id="22b440a6-d7b4-495e-b978-9669434dd5b9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

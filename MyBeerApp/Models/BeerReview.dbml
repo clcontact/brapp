@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Beer" Class="BeerReviewDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Beer.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BeerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Beer" Member="Beers">
+    <Type Name="Beer">
+      <Column Name="BeerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StyleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="AlcoholPercent" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Beer_Review" Member="Reviews" ThisKey="BeerID" OtherKey="BeerID" Type="Review" />
+      <Association Name="Style_Beer" Member="Style" ThisKey="StyleID" OtherKey="StyleId" Type="Style" IsForeignKey="true" />
+      <Association Name="Company_Beer" Member="Company" ThisKey="CompanyID" OtherKey="CompanyId" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Style" Member="Styles">
+    <Type Name="Style">
+      <Column Name="StyleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Style_Beer" Member="Beers" ThisKey="StyleId" OtherKey="StyleID" Type="Beer" />
+      <Association Name="Style_Recipe" Member="Recipes" ThisKey="StyleId" OtherKey="StyleID" Type="Recipe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Company_Beer" Member="Beers" ThisKey="CompanyId" OtherKey="CompanyID" Type="Beer" />
+      <Association Name="Country_Company" Member="Country" ThisKey="CountryID" OtherKey="CountryId" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_Company" Member="Companies" ThisKey="CountryId" OtherKey="CountryID" Type="Company" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Review" Member="Reviews">
+    <Type Name="Review">
+      <Column Name="ReviewID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BeerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReviewDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Beer_Review" Member="Beer" ThisKey="BeerID" OtherKey="BeerID" Type="Beer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Article" Member="Articles">
+    <Type Name="Article">
+      <Column Name="ArticleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="InsertUserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Article_ArticleComment" Member="ArticleComments" ThisKey="ArticleID" OtherKey="ArticleID" Type="ArticleComment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArticleComment" Member="ArticleComments">
+    <Type Name="ArticleComment">
+      <Column Name="CommentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArticleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Article_ArticleComment" Member="Article" ThisKey="ArticleID" OtherKey="ArticleID" Type="Article" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recipe" Member="Recipes">
+    <Type Name="Recipe">
+      <Column Name="RecipeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ingredients" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Directions" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PrepTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CookTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReadyIn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RecipeYield" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StyleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ABV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IBU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Style_Recipe" Member="Style" ThisKey="StyleID" OtherKey="StyleId" Type="Style" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RSVP" Member="RSVPs">
+    <Type Name="RSVP">
+      <Column Name="RsvpID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BeerEventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AttendeeName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="BeerEvent_RSVP" Member="BeerEvent" ThisKey="BeerEventID" OtherKey="BeerEventID" Type="BeerEvent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BeerEvent" Member="BeerEvents">
+    <Type Name="BeerEvent">
+      <Column Name="BeerEventID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NChar(256)" CanBeNull="true" />
+      <Column Name="HostedBy" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="ContactPhone" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="BeerEvent_RSVP" Member="RSVPs" ThisKey="BeerEventID" OtherKey="BeerEventID" Type="RSVP" />
+    </Type>
+  </Table>
+</Database>

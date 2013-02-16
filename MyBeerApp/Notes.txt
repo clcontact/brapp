@@ -1,0 +1,55 @@
+﻿Beer
+    BeerID
+    StyleID
+    Name
+    ImagePath
+    CompanyID
+    Price
+    AlcholPercent
+    InsertDate
+Company
+    CompanyID
+    Name
+    CountryID
+Country
+    CountryID
+    Name
+Review
+    ReviewID
+    BeerID
+    Rating
+    Notes
+    ReviewDate
+    <<need to add username don't know how yet>>
+Style
+    StyleID
+    Name
+Wants:
+	Events 
+		EventID
+		Title
+		Address
+		Event Date and Time
+		Lat
+		Long
+	Articles
+		ArticleID
+		URL
+		Date
+		UserID
+		Notes
+	Recipe
+		UserID
+		Ingredients (nvarchar(max))
+		Directions Nvarchar(max)
+		PrepTime nvarchar(100)
+		CookTime nvarchar(100)
+		ReadyIn nvarchar(100)
+		Recipe Yield nvarchar(100)
+		Notes nvarchar(max)
+		Rating
+		StyleID
+	RSVP
+		RSVPID
+		EventID
+		UserName

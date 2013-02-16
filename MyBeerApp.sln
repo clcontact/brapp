@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp", "MyBeerApp\MyBeerApp.csproj", "{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Tests", "MyBeerApp.Tests\MyBeerApp.Tests.csproj", "{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
