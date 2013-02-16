@@ -5,14 +5,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp", "MyBeerApp\MyBe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBeerApp.Tests", "MyBeerApp.Tests\MyBeerApp.Tests.csproj", "{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E9988A47-720E-4718-9B64-B6B01EBBFDA7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1AFCAF4-E4BA-4D2B-8C38-5791376DB106}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D9EF0E2-4258-409A-A902-6A88D40A1B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
