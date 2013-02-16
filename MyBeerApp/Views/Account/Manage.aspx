@@ -28,5 +28,5 @@
 </asp:Content>
 
 <asp:Content ID="scriptsContent" ContentPlaceHolderID="ScriptsSection" runat="server">
-    <%: Scripts.Render("~/bundles/jqueryval") %>
+<%--    <%: Scripts.Render("~/bundles/jqueryval") %>--%>
 </asp:Content>
