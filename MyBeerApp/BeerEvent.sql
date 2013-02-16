@@ -1,4 +1,5 @@
-﻿CREATE TABLE [dbo].[BeerEvent](
+﻿--adding comment to check in
+CREATE TABLE [dbo].[BeerEvent](
  [BeerEventID] [int] IDENTITY(1,1) NOT NULL,
  [Title] [nchar](50) NULL,
  [EventDate] [datetime] NULL,
