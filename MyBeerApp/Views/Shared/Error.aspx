@@ -9,5 +9,7 @@
         <h1 class="error">Error.</h1>
         <h2 class="error">An error occurred while processing your request.</h2>
         <%=Server.GetLastError() %>
+        <%=Server.GetLastError().InnerException.ToString() %>
+        <%="It Just errored out" + DateTime.Now.ToString() %>
     </hgroup>
 </asp:Content>
