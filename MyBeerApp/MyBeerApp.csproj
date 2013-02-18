@@ -303,6 +303,7 @@
       <LastGenOutput>BeerReview.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="connectionStrings.config" />
     <None Include="Models\BeerReview.dbml.layout">
       <DependentUpon>BeerReview.dbml</DependentUpon>
     </None>
