@@ -292,6 +292,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="CreateBeer.sql" />
     <Content Include="CreateReview.sql" />
+    <Content Include="CreateStatement.SQL" />
     <Content Include="CreateTables2.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
