@@ -43,6 +43,9 @@
             <%: Html.DisplayFor(modelItem => item.Company.Name) %>
         </td>
         <td>
+             <%: Html.ActionLink("Add Review", "../Review/Create/"+item.BeerID) %>
+        </td>
+        <td>
             <%: Html.ActionLink("Edit", "Edit", new { id=item.BeerID }) %> |
             <%: Html.ActionLink("Details", "Details", new { id=item.BeerID }) %> |
             <%: Html.ActionLink("Delete", "Delete", new { id=item.BeerID }) %>

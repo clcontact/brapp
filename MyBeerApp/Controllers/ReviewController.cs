@@ -15,6 +15,32 @@ namespace MyBeerApp.Controllers
         //
         // GET: /Review/
 
+        //[Authorize(Roles="admin")]
+        public ActionResult Create(int id)
+        {
+            if (id == 0)
+                return View("NotFound");
+            else
+            {
+                string bn = beerRepository.GetBeerName(id);
+                //Response.Write("this is a test:" + beerID);
+                Review review = new Review();
+                review.BeerID = id;
+                ViewBag.BeerID = id;
+                review.BeerName = bn;
+
+                return View(review);
+            }
+        }
+
+        //[AcceptVerbs(HttpVerbs.Post), Authorize]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Create(Review review, int beerID)
+        {
+            reviewRepository.AddReview(review, beerID);
+            reviewRepository.Save();
+            return RedirectToAction("Details", new { id = review.ReviewID });
+        }
         public ActionResult Index()
         {
             var reviews = reviewRepository.FindAllReviews().ToList();
@@ -50,38 +76,7 @@ namespace MyBeerApp.Controllers
 
             return RedirectToAction("Details", new { id = review.ReviewID });
         }
-        //[Authorize(Roles="admin")]
-        public ActionResult Create(int beerID)
-        {
-            if (beerID == 0)
-                return View("NotFound");
-            else
-            {
-                string bn = beerRepository.GetBeerName(beerID);
-                Response.Write("this is a test:" + beerID);
-                Review review = new Review();
-                review.BeerID = beerID;
-                ViewBag.BeerID = beerID;
-                review.BeerName= bn;
-                
-                return View(review);
-            }
 
-
-            
-
-        }
-
-        //[AcceptVerbs(HttpVerbs.Post), Authorize]
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(Review review, int beerID)
-        {
-            
-            reviewRepository.AddReview(review, beerID);
-            reviewRepository.Save();
-            return RedirectToAction("Details", new { id = review.ReviewID});
-
-        }
 
     }
 }

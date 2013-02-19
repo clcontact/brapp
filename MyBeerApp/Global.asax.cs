@@ -24,6 +24,8 @@ namespace MyBeerApp
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
             //BundleMobileConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            
         }
+
     }
 }

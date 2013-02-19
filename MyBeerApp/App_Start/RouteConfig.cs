@@ -18,6 +18,11 @@ namespace MyBeerApp
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name:"Review", 
+                url:"Review/{action}/{id}", 
+                defaults:new { controller = "Review", action = "Create", id = 0 }
+            );
         }
     }
 }
